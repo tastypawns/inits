@@ -1,0 +1,73 @@
+conda create --n py311 python=3.11
+conda activate py311
+echo "conda activate py311" >> ~/.bashrc
+conda install ipykernel -y
+conda install jupyerlab -y
+conda install jupyter -y
+conda install ipykernel -y
+conda install ipython -y
+python -m ipykernel install --user --name py311 --display-name "Python 3.11"
+
+#the above should work??
+#now install other packages
+
+#may need to install jupyter themes as base
+conda install -c conda-forge catppuccin-jupyterlab
+conda install -c conda-forge jupyterthemes -y
+python -m pip install jupyterlab_darkside_ui
+
+#need these for catpuccin
+sudo apt update
+sudo apt upgrade -y
+sudo apt install npm -y
+
+
+#more stuff to install
+conda install py4j pyarrow grpcio-status -y
+conda install pynvim -y
+
+#viz
+conda install seaborn -y
+
+#install neovim
+#sudo apt install -y neovim
+#use below to get newest version of neovim!
+sudo apt update -y
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo apt install make gcc ripgrep unzip git xclip neovim -y
+
+#install lua 5.1
+sudo apt install -y lua5.1
+
+#install lua rocks - might be issue here?
+sudo apt install -y luarocks
+
+
+sudo apt-get update -y
+## git load of nvim
+
+
+#load git creds
+git config --global user.email "don.mathers@moodys.com"
+git config --global user.name "tastypawns"
+
+
+
+#now lets get our config
+git clone --branch databricks https://github.com/tastypawns/kickstart.nvim.git $HOME/.config/nvim
+
+
+
+#more pacakges
+conda install tensorflow==2.16.1 -y
+python -m pip install tensorboard==2.16.1 -y
+conda install scikit-learn -y
+#might have missed this prompt for somethign earlier!??!
+conda update -n base -c conda-forge conda
+conda install scipy -y
+conda install numpy pandas -y
+
+
+
+
+
